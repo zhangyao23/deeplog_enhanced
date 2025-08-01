@@ -1,0 +1,50 @@
+{
+  "data_config": {
+    "max_sequence_length": 50,
+    "min_sequence_length": 10,
+    "num_event_types": 26,
+    "padding_value": 0,
+    "window_size": 10,
+    "processed_dir": "enhanced_deeplog/data/processed",
+    "raw_data_dir": "enhanced_deeplog/data/raw",
+    "data_file": "synthetic_hdfs_train.txt"
+  },
+  "feature_config": {
+    "use_statistical_features": true,
+    "use_prediction_features": true,
+    "use_pattern_features": true,
+    "feature_dimension": 128
+  },
+  "clustering_config": {
+    "n_clusters": 3,
+    "algorithm": "kmeans",
+    "random_state": 42
+  },
+  "model_config": {
+    "lstm_hidden_size": 128,
+    "lstm_num_layers": 2,
+    "lstm_dropout": 0.2,
+    "attention_heads": 8,
+    "attention_dropout": 0.1,
+    "sequence_head_dropout": 0.3,
+    "anomaly_head_dropout": 0.4,
+    "use_attention": true,
+    "clustering_model_path": "enhanced_deeplog/models/clustering_model.pkl",
+    "base_model_path": "enhanced_deeplog/models/base_model.pth"
+  },
+  "training_config": {
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "num_epochs": 50,
+    "sequence_loss_weight": 0.6,
+    "anomaly_loss_weight": 0.4,
+    "weight_decay": 1e-4,
+    "gradient_clip": 0.5,
+    "early_stopping_patience": 10
+  },
+  "evaluation_config": {
+    "anomaly_threshold_percentile": 95,
+    "classification_metrics": ["accuracy", "precision", "recall", "f1"],
+    "clustering_metrics": ["silhouette_score", "calinski_harabasz_score"]
+  }
+} 
