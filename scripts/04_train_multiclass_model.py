@@ -18,7 +18,7 @@ import os
 import sys
 import logging
 import torch
-import numpy as np
+import numpy as np 
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.model_selection import train_test_split
 
