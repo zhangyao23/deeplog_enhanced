@@ -1,5 +1,15 @@
 # Enhanced DeepLog: Multi-Class Anomaly Classification
 
+## 🚀 快速导航
+
+| 用户类型 | 推荐阅读顺序 | 主要文档 |
+|---------|-------------|----------|
+| **新手用户** | 快速开始 → 项目原理 → 技术概览 | [快速开始](guide/quick_start.md) |
+| **研究人员** | 技术论文 → 项目原理 → 召回率策略 | [技术论文](guide/technical_paper.md) |
+| **工程师** | 快速开始 → API参考 → 滑动窗口算法 | [API参考](guide/api_reference.md) |
+| **运维人员** | 项目原理 → 快速开始 → 文本处理指南 | [项目原理](guide/project_principles.md) |
+| **算法研究者** | 滑动窗口算法 → 召回率策略 → 技术论文 | [滑动窗口算法](guide/sliding_window_explanation.md) |
+
 ## 1. 项目概述
 
 本项目是对经典日志异常检测模型DeepLog的增强实现，旨在不仅能识别异常，还能对异常进行**多分类**。我们采用了一种新颖的、分阶段的半监督方法，该方法更符合DeepLog的核心思想，即**异常是"对正常模式的偏离"**。
@@ -9,6 +19,38 @@
 - **避免过拟合**: 引入验证集和早停机制，确保基础模型具有最佳的泛化能力。
 - **数据驱动的异常定义**: 使用无监督聚类来自动发现和定义异常类别，而不是依赖于预先设定的人工规则。
 - **模块化代码结构**: 将数据处理、模型定义、训练、评估等功能解耦，提高了代码的可维护性和可扩展性。
+
+### 📖 详细原理说明
+- **技术论文**: [`guide/technical_paper.md`](guide/technical_paper.md) - 完整的学术论文，包含数学公式和实验分析
+- **项目原理**: [`guide/project_principles.md`](guide/project_principles.md) - 详细的技术原理和工作流程说明
+
+## 📚 完整文档体系
+
+本项目提供了完整的文档体系，帮助您从不同角度理解和使用增强DeepLog：
+
+### 🎯 核心文档
+- **[技术论文](guide/technical_paper.md)** - 完整的学术论文，包含数学公式、实验设计和结果分析
+- **[项目原理](guide/project_principles.md)** - 详细的技术原理、工作流程和架构说明
+- **[技术概览](guide/technical_overview.md)** - 技术架构和核心概念的全面介绍
+
+### 🚀 使用指南
+- **[快速开始](guide/quick_start.md)** - 5分钟快速上手指南
+- **[API参考](guide/api_reference.md)** - 完整的API文档和代码示例
+- **[文本处理指南](guide/text_processing_guide.md)** - 日志文本处理的最佳实践
+
+### 🔧 算法详解
+- **[滑动窗口算法](guide/sliding_window_explanation.md)** - 滑动窗口分割算法的详细解释和实现
+- **[召回率提升策略](guide/recall_improvement_strategies.md)** - 提高模型召回率的完整策略和代码实现
+
+### 📋 文档管理
+- **[文档总结](guide/documentation_summary.md)** - 所有文档的索引和导航指南
+
+### 📊 文档统计
+- **总文档数**: 9个专业文档
+- **总字数**: 约100,000字
+- **代码示例**: 200+个代码片段
+- **数学公式**: 20+个核心公式
+- **图表**: 10+个架构图和流程图
 
 ## 2. 技术架构
 
@@ -199,4 +241,48 @@ enhanced_deeplog/
     python3 scripts/02_extract_features.py
     python3 scripts/03_cluster_anomalies.py
     python3 scripts/04_train_multiclass_model.py
-    ``` 
+    ```
+
+## 📖 文档使用指南
+
+### 🎯 根据您的需求选择合适的文档
+
+#### 如果您是**研究人员**：
+- 从 **[技术论文](guide/technical_paper.md)** 开始，了解理论基础和实验设计
+- 查看 **[项目原理](guide/project_principles.md)** 了解技术实现细节
+- 参考 **[召回率提升策略](guide/recall_improvement_strategies.md)** 进行模型优化
+
+#### 如果您是**工程师**：
+- 从 **[快速开始](guide/quick_start.md)** 开始，快速上手项目
+- 查看 **[API参考](guide/api_reference.md)** 了解具体接口
+- 参考 **[技术概览](guide/technical_overview.md)** 理解整体架构
+
+#### 如果您是**运维人员**：
+- 从 **[项目原理](guide/project_principles.md)** 开始，了解系统工作原理
+- 查看 **[快速开始](guide/quick_start.md)** 学习如何部署
+- 参考 **[文本处理指南](guide/text_processing_guide.md)** 了解日志处理
+
+#### 如果您想**深入算法**：
+- 查看 **[滑动窗口算法](guide/sliding_window_explanation.md)** 了解核心算法
+- 参考 **[召回率提升策略](guide/recall_improvement_strategies.md)** 学习优化方法
+- 查看 **[技术论文](guide/technical_paper.md)** 了解数学原理
+
+### 🔍 文档导航建议
+
+1. **首次接触项目**：`快速开始` → `项目原理` → `技术概览`
+2. **学术研究**：`技术论文` → `项目原理` → `召回率提升策略`
+3. **工程实现**：`快速开始` → `API参考` → `滑动窗口算法`
+4. **性能优化**：`召回率提升策略` → `技术论文` → `项目原理`
+
+### 📝 文档反馈
+
+如果您发现文档中的问题或有改进建议，欢迎：
+- 提交Issue到项目仓库
+- 发送邮件到项目维护者
+- 参与文档贡献
+
+### 🔗 相关资源
+
+- **原始DeepLog论文**：[DeepLog: Anomaly Detection and Diagnosis from System Logs through Deep Learning](https://dl.acm.org/doi/10.1145/3132747.3132785)
+- **HDFS数据集**：[HDFS Dataset](https://github.com/logpai/loghub)
+- **相关工具**：[LogPai](https://github.com/logpai/loglizer) 
